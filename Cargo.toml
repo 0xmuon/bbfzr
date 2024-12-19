@@ -1,0 +1,19 @@
+[package]
+name = "baby_fuzzer"
+version = "0.1.0"
+authors=["Ruderx rudrakshjoshic@gmail.com"]
+edition = "2021"
+
+[dependencies]
+libafl = {path = "../LibAFL/libafl"}
+libafl_bolts = {path = "../LibAFL/libafl_bolts"}
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1
+opt-level = 3
+debug = true
